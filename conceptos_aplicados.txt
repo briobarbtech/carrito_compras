@@ -1,0 +1,10 @@
+pip
+Entornos virtuales
+Python
+Prácticas de seguridad .env
+GIT
+Uso de librerias como
+    - Django
+clases
+estructuras if, for
+html - css
