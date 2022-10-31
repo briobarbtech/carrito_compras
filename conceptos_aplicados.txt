@@ -5,6 +5,8 @@ Prácticas de seguridad .env
 GIT
 Uso de librerias como
     - Django
+Navegacion
+CRUD
 clases
 estructuras if, for
 html - css

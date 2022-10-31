@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'theme/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/93195478fa.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="bar">
+            <div class="logo"><i class="fa-brands fa-shopify bar_icon"></i><a class="bar_title" href="{% url 'home' %}">Tienda de cosas</a></div>
+        </nav>
+    <div class="products"><h1 class="products_title">Productos</h1></div>
+</header>
+    <main>
+        <div class="product_detail-card">
+            <img class="product_img --detail" src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt="bolsa de compras">
+            <p class="product_title --detail">Nombre: {{producto.nombre}}</p>
+            <p class="product_category --detail">Categoria: {{producto.categoria}}</p>
+            <p class="product_price --detail">Precio: ${{producto.precio}}</p>
+        </div>
+        <div class="functions-sector">
+            <input class="card_function" type="button" onclick="history.back()" name="volver atrás" value="Volver">
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'theme/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/93195478fa.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="bar">
+            <div class="logo"><i class="fa-brands fa-shopify bar_icon"></i><p class="bar_title">Tienda de cosas</p></div>
+        </nav>
+        <div class="banner"><h1 class="banner_title">¡BIENVENIDO!</h1></div>
+
+    </header>
+    <main>
+        <div class="func">
+            <a href="{% url 'store:product_list' %}" class="card_function">Listar productos</a>
+            <a href="{% url 'store:product_create' %}" class="card_function">Agregar producto</a>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
