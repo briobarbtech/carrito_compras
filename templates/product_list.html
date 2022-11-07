@@ -21,20 +21,38 @@
         <div class="products"><h1 class="products_title">Productos</h1></div>
     </header>
     <main>
-        <ul class="list_product">
-            {% for producto in productos %}
-            <li>
-                <div class="product_card">
-                    <a class="product_card-name" href="{% url 'store:product_detail' producto.id %}">{{producto.nombre}}</a>
-                    <div class="product_card-operations">
-                        <a class="product_card-name --functions" href="{% url 'store:product_update' producto.id %}">Actualizar</a>
-                        <a class="product_card-name --functions" href="{% url 'store:product_delete' producto.id %}">Eliminar</a>
+        <div class="cosas">
+            <ul class="list_product">
+                {% for producto in productos %}
+                <li>
+                    <div class="product_card">
+                        <p class="product_card-name">{{producto.nombre}}</p>
+                        <i class="fa-brands fa-shopify --detail"></i>
+                        <p>${{producto.precio}}</p>
+                        <div class="product_card-operations">
+                            <a class="function-btn" href="{% url 'store:Add' producto.id %}">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <p class="function-btn-text">Add to cart</p>
+                            </a>
+                            <a class="function-btn" href="{% url 'store:product_update' producto.id %}">
+                                <i class="fa-solid fa-trash"></i>
+                            <p class="function-btn-text">Actualizar</p>
+                            </a>
+                            <a class="function-btn" href="{% url 'store:product_delete' producto.id %}">
+                                <i class="fa-solid fa-pen"></i>
+                                <p class="function-btn-text" >Eliminar</p>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-            </li>
-        {% endfor %}
-        </ul>
+                </li>
+            {% endfor %}
+            </ul>
+            <div class="cart">
+                {% include "shopping_cart.html" %}
+            </div>
+        </div>
+
         <div class="functions-sector">
             <input class="card_function --cancelar" type="button" onclick="history.back()" name="volver atrás" value="Volver">
         </div>

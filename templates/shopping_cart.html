@@ -1,0 +1,47 @@
+<div class="alert alert-primary" role="alert">
+<table class="table table-bordered" style="width: 100%">
+  <thead>
+    <tr>
+      <th scope="row" colspan="5" class="text-center">CARRITO</th>
+    </tr>
+    <tr>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">PRECIO</th>
+      <th scope="col">CANTIDAD</th>
+      <th scope="col">ACUMULADO</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if request.session.carrito.items %}
+  {% for key, value in request.session.carrito.items %}
+    <tr>
+      <td>{{value.nombre}}</td>
+      <td>{{value.precio}}</td>
+      <td>{{value.cantidad}}</td>
+      <td>{{value.acumulado}}</td>
+      <td class="count-btn">
+        <a href="{% url 'store:Add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+        <a href="{% url 'store:Sub' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+      </td>
+    </tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+      <td colspan="3">
+          <div class="alert alert-danger text-center"> Sin Productos </div>
+      </td>
+  </tr>
+  {% endif %}
+    <tr>
+      <th scope="row" colspan="3">Total:</th>
+      <td colspan="2">$ {{total_carrito}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+</div>
+<div class="function_cart row text-center">
+    <div class="col-6 function_cart-btn --cancelar"><a href="{% url 'store:CLS' %}" style="color: #000">Limpiar</a></div>
+    <div class="col-6 function_cart-btn --update"><a href="#" style="color: #000">Comprar</a></div>
+</div>

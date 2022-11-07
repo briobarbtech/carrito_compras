@@ -16,6 +16,7 @@ class Carrito:
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
                 "acumulado": producto.precio,
+                "precio": producto.precio,
                 "cantidad": 1,
             }
         else:
