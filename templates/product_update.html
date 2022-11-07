@@ -45,7 +45,7 @@
         <button class="card_function --update" type="submit">Actualizar</button>
 
       </form>
-      <input class="card_function --cancelar" type="button" onclick="history.back()" name="volver atrás" value="Volver">
+      <a class="card_function --cancelar" href="{% url 'store:product_list' %}" name="volver atrás">Volver</a>
 
     </main>
     <footer></footer>

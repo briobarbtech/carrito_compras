@@ -37,7 +37,7 @@
         {{form}}
         <button class="card_function" type='submit'>Eliminar</button>
     </form>
-    <input class="card_function --cancelar" type="button" onclick="history.back()" name="volver atrás" value="Conservar">
+    <a class="card_function --cancelar" href="{% url 'store:product_list' %}" name="volver atrás">Conservar</a>
 
     </main>
     <footer></footer>
